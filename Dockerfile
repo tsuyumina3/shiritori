@@ -6,7 +6,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Add current directory code to working directory
-ADD . /app/
+COPY . /app/
 
 # set default environment variables
 ENV PYTHONUNBUFFERED 1
