@@ -1,0 +1,6 @@
+build:
+    docker:
+      web: Dockerfile
+# no need for run, make use of CMD command from Dockerfile
+#   run:
+#     web: 
