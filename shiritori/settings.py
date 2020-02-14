@@ -27,7 +27,10 @@ SECRET_KEY = '^^_%itxj$1+wh#&eqwy_h$(jmillps$o8vxyrqe-j+ifh#6cm^'
 # DEBUG can be True/False or 1/0
 DEBUG = int(os.environ.get('DEBUG', default=1)) 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'shi-ri-to-ri.herokuapp.com',
+    'shi-ri-to-ri-dev.herokuapp.com',
+]
 
 
 # Application definition
