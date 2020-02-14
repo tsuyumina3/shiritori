@@ -30,6 +30,7 @@ DEBUG = int(os.environ.get('DEBUG', default=1))
 ALLOWED_HOSTS = [
     'shi-ri-to-ri.herokuapp.com',
     'shi-ri-to-ri-dev.herokuapp.com',
+    'localhost',
 ]
 
 
