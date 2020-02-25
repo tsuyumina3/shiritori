@@ -2,13 +2,13 @@
 FROM python:3.6
 
 # create and set working directory
-RUN mkdir /src
-RUN mkdir /static
+RUN mkdir /app
+# RUN mkdir /src
 
-WORKDIR /src
+WORKDIR /app/src
 
 # Add src directory code to working directory
-COPY ./src /src/
+COPY . /app/
 
 # set default environment variables
 ENV PYTHONUNBUFFERED 1
@@ -40,7 +40,7 @@ RUN pip3 install pipenv
 # Install project dependencies
 RUN pipenv install --skip-lock --system --dev
 
-# EXPOSE 8000
+EXPOSE 8000
 # CMD gunicorn shiritori.wsgi:application --bind 0.0.0.0:8000
-CMD ["sh", "-c", "python manage.py collectstatic --no-input; python manage.py migrate; gunicorn shiritori.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --no-input && python manage.py makemigrations && python manage.py migrate && gunicorn shiritori.wsgi:application --bind 0.0.0.0:8000"]
 

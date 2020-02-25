@@ -1,6 +1,7 @@
 build:
     docker:
-      web: Dockerfile
+      app: compose/app/Dockerfile
+      nginx: compose/nginx/Dockerfile
 # no need for run, make use of CMD command from Dockerfile
 #   run:
 #     web: 
