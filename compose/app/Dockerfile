@@ -5,7 +5,7 @@ FROM python:3.6
 RUN mkdir /app
 # RUN mkdir /src
 
-WORKDIR /app/src
+WORKDIR /app
 
 # Add src directory code to working directory
 COPY . /app/
